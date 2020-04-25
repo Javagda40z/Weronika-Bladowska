@@ -10,6 +10,8 @@ public class Ciagi {
 //            List<Integer> lista=new ArrayList<Integer>();//polimorfizm bo lista to arraylista
 //            ArrayList<Integer> lista2=new ArrayList<>(); // arraylista jest szersza od listy
         System.out.println(stworzCiagArytmetyczny(5,1,2));
+        List<Integer> ciag = stworzCiagArytmetyczny(10,1,1);
+        System.out.println(ciag);
     }
 
 
@@ -22,5 +24,18 @@ public class Ciagi {
 
         }return ciag;
 
+    }
+
+    public boolean sprawdzCzyCiagArytmetyczny(List<Integer> ciag) {
+
+        for (int i = 1; i + 1 < ciag.size(); i++) {
+            if ((ciag.get(i - 1) + ciag.get(i + 1)) / 2 != ciag.get(i)) {
+
+                return false;
+            }
+
+        }
+
+        return false;
     }
 }
