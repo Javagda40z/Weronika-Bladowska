@@ -5,6 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import javax.crypto.spec.PSource;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class DataICzas {
  static Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
 
+        formatDaty();
         dzisiejszaDataIGodzina();
 
         ileDniDoKoncaRoku();
@@ -24,7 +26,6 @@ public class DataICzas {
 
         czyPrzestepnyRok();
 
-        formatDaty();
 
     }
 
@@ -118,12 +119,12 @@ public class DataICzas {
         System.out.println("Podany rok nie jest przestępny");
     }}
 
-        public static LocalDateTime formatDaty(){
+        public static void formatDaty(){
 
-        SimpleDateFormat format=new SimpleDateFormat("HH:mm, yyyy/MM/dd");
-        LocalDateTime data= LocalDateTime.now();
-            System.out.println(format.format(data));
-            return data;
+            ZonedDateTime data= ZonedDateTime.now();
+            DateTimeFormatter f = DateTimeFormatter.ofPattern("HH:mm, yyyy/MM/dd");
+
+            System.out.println(data.format(f));
             }
 
     }
