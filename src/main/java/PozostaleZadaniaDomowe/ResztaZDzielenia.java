@@ -16,24 +16,37 @@ public class ResztaZDzielenia {
        this.dzielna=dzielna;
    }
 
-    public void resztaZDzielenia(){
+    public void obliczReszteZDzielenia(){
 
         wynik=dzielna/dzielnik;
         if(wynik*dzielnik!=dzielna){
-//            reszta=((wynik+1)*dzielnik)-wynik;
+
             reszta=dzielna-(wynik*dzielnik);
         } else reszta=0;
 
         System.out.println("Reszta z dzielenia wynosi: "+ reszta);
     }
 
+    public void sprawdzenieModulo(int dzielna, int dzielnik){
+        if(dzielna % dzielnik == reszta) {
+            System.out.println("Modulo jest obliczone poprawnie");
+        }
+
+
+    }
+
 
     public static void main(String[] args) {
 
        ResztaZDzielenia resztaZDzielenia=new ResztaZDzielenia(30,8);
-       resztaZDzielenia.resztaZDzielenia();
+       resztaZDzielenia.obliczReszteZDzielenia();
+       resztaZDzielenia.sprawdzenieModulo(30,8);
+
+
 
 
     }
+
+
 
 }
